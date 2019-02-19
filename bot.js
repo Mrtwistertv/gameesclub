@@ -156,6 +156,35 @@ client.on('message', puz => {
     }
 })
 
+client.on('message', nkt => {
+    if (puz.content == "!نكته") {
+        var x = ["كيف تدخل فيل الثلاجه علي مرتين ؟",
+"ما هي قمة الادب ؟",
+];
+        var x2 = ['تفتح الثلاجة وتدخل الفيل',
+		"انك تخبط علي التلاجة قبل ما تفتحها",
+        ];
+        
+        var x3 = Math.floor(Math.random()*x.length)
+        puz.channel.send(`السؤال هو:  __**${x[x3]}**__
+لديك 20 ثانية للاجابة`).then(msg1=> {
+            var r = puz.channel.awaitMessages(msg => msg.content == x2[x3], {
+                maxMatches : 1,
+                time : 20000,
+                errors : ['time']
+            })
+        r.catch(() => {
+            return puz.channel.send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+            `)
+        })
+        
+        r.then((collected)=> {
+            puz.channel.send(`${collected.first().author} لقد قمت بحل اللغز في الوقت المناسب  `);
+        })
+        })
+    }
+})
+
 client.on('message', fkk => {
     if (fkk.content == "!فكك") {
         var x = ["المتاح للجميع لا يتاح لي",
