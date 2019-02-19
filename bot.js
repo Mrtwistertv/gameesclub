@@ -157,7 +157,7 @@ client.on('message', puz => {
 })
 
 client.on('message', nkt => {
-    if (puz.content == "!نكته") {
+    if (nkt.content == "!نكته") {
         var x = ["كيف تدخل فيل الثلاجه علي مرتين ؟",
 "ما هي قمة الادب ؟",
 ];
@@ -166,15 +166,15 @@ client.on('message', nkt => {
         ];
         
         var x3 = Math.floor(Math.random()*x.length)
-        puz.channel.send(`السؤال هو:  __**${x[x3]}**__
+        nkt.channel.send(`السؤال هو:  __**${x[x3]}**__
 لديك 20 ثانية للاجابة`).then(msg1=> {
-            var r = puz.channel.awaitMessages(msg => msg.content == x2[x3], {
+            var r = nkt.channel.awaitMessages(msg => msg.content == x2[x3], {
                 maxMatches : 1,
                 time : 20000,
                 errors : ['time']
             })
         r.catch(() => {
-            return puz.channel.send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+            return nkt.channel.send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
             `)
         })
         
