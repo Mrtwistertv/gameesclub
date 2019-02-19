@@ -179,7 +179,7 @@ client.on('message', nkt => {
         })
         
         r.then((collected)=> {
-            puz.channel.send(`${collected.first().author} لقد قمت بحل اللغز في الوقت المناسب  `);
+            nkt.channel.send(`${collected.first().author} لقد قمت بحل اللغز في الوقت المناسب  `);
         })
         })
     }
