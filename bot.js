@@ -156,23 +156,6 @@ client.on('message', puz => {
     }
 })
 
-client.on('message', ekab => {
-    if (ekab.content == "!عقاب") {
-        var x = [" اتصل علي رقم عشوائي وخبره انك تحبه وتبي تخطب بنته او اخته وانك تحبها ",
-"اقفز فوق سريرك 5 مرات وصارخ امام اهلك وسوي حالك ملبوس بجن",
-"روح بوس رجل امك",
-];      
-        var x3 = Math.floor(Math.random()*x.length)
-        ekab.channel.send(`عقابك هو::  __**${x[x3]}**__`).then(msg1=> {
-            var r = ekab.channel.awaitMessages(msg => msg.content == x2[x3], {
-                maxMatches : 1,
-                time : 0,
-                errors : ['time']
-            })
-        })
-    }
-})
-
 
 client.on('message', nkt => {
     if (nkt.content == "!نكته") {
@@ -185,7 +168,7 @@ client.on('message', nkt => {
         
         var x3 = Math.floor(Math.random()*x.length)
         nkt.channel.send(`السؤال هو:  __**${x[x3]}**__
-لديك 20 ثانية للاجابة`).then(msg1=> {
+عندك 20 ثانية تخمن باقي النكته`).then(msg1=> {
             var r = nkt.channel.awaitMessages(msg => msg.content == x2[x3], {
                 maxMatches : 1,
                 time : 20000,
