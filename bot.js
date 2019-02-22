@@ -189,10 +189,15 @@ client.on('message', nkt => {
 client.on('message', matigi => {
     if (matigi.content == "!ما تيجي") {
         var x = ["ما تيجي في الزبالة",
-"ما تيجي علي السطوح",
+	"ما تيجي علي السطوح",
+	"ما تيجي علي المواسير",
+	"ما تيجي",
+
 ];
         var x2 = ['ونجيب هاله',
 		"ونجيب ممدوح",
+		  "ونجيب سمير",
+		  "ونجيب مليجي",
         ];
         
         var x3 = Math.floor(Math.random()*x.length)
