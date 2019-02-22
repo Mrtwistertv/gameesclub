@@ -186,6 +186,35 @@ client.on('message', nkt => {
     }
 })
 
+client.on('message', matigi => {
+    if (matigi.content == "!ما تيجي") {
+        var x = ["ما تيجي في الزبالة",
+"ما تيجي علي السطوح",
+];
+        var x2 = ['ونجيب هاله',
+		"ونجيب ممدوح",
+        ];
+        
+        var x3 = Math.floor(Math.random()*x.length)
+        matigi.channel.send(`المعاكسه هي:  __**${x[x3]}**__
+عندك 20 ثانية تخمن باقي المعاكسه كمتحرش`).then(msg1=> {
+            var r = matigi.channel.awaitMessages(msg => msg.content == x2[x3], {
+                maxMatches : 1,
+                time : 20000,
+                errors : ['time']
+            })
+        r.catch(() => {
+            return matigi.channel.send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+            `)
+        })
+        
+        r.then((collected)=> {
+            matigi.channel.send(`${collected.first().author} لقد قمت باكمال المعاكسة لانك متحرش قمد نق  `);
+        })
+        })
+    }
+})
+
 client.on('message', fkk => {
     if (fkk.content == "!فكك") {
         var x = ["المتاح للجميع لا يتاح لي",
