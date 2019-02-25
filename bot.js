@@ -186,6 +186,54 @@ client.on('message', nkt => {
     }
 })
 
+client.on('message', khamn => {
+    if (khamn.content == "!خمن") {
+        var x = ["كيف نكتب جومانه؟",
+	"مين حبيب جمنه؟",
+	"لقب محمد؟ (فهد النار)",
+	"عمر اسلام؟ (ناروتو)",
+	"اسم تويكس الحقيقي؟",
+	"طول تويكس؟",
+	"عمر نيترو؟",
+        "عمر تويستر؟",
+
+
+
+
+];
+        var x2 = ['جمنه',
+		"نيترو",
+	       "نيترو",
+	      "14",
+	      "احمد",
+	      "181",
+	      "13",
+	       "13",
+
+
+
+        ];
+        
+        var x3 = Math.floor(Math.random()*x.length)
+        khamn.channel.send(`السؤال هو:  __**${x[x3]}**__
+عندك 20 ثانية تخمن باقي النكته`).then(msg1=> {
+            var r = khamn.channel.awaitMessages(msg => msg.content == x2[x3], {
+                maxMatches : 1,
+                time : 20000,
+                errors : ['time']
+            })
+        r.catch(() => {
+            return khamn.channel.send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+            `)
+        })
+        
+        r.then((collected)=> {
+            khamn.channel.send(`${collected.first().author} لقد قمت بحل اللغز في الوقت المناسب  `);
+        })
+        })
+    }
+})
+
 client.on('message', matigi => {
     if (matigi.content == "!ما تيجي") {
         var x = ["ما تيجي في الزبالة",
