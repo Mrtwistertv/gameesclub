@@ -233,7 +233,7 @@ client.on('message', khamn => {
 		"BTS",
 		 "Sao",
 		 "البرمجة",
-  		 "خلود
+  		 "خلود",
 
 
 
