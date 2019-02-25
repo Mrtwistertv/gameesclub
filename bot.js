@@ -235,9 +235,6 @@ client.on('message', khamn => {
 		 "البرمجة",
   		 "خلود",
 
-
-
-
         ];
         
         var x3 = Math.floor(Math.random()*x.length)
