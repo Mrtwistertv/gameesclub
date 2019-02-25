@@ -209,9 +209,6 @@ client.on('message', khamn => {
 	"اكثر انمي محميدو يحبه",
 	"هواية تويستر؟",
 	"كراش تويكس؟
-
-
-
 ];
         var x2 = ['جمنه',
 		"نيترو",
@@ -234,8 +231,7 @@ client.on('message', khamn => {
 		 "Sao",
 		 "البرمجة",
   		 "خلود",
-
-        ];
+];
         
         var x3 = Math.floor(Math.random()*x.length)
         khamn.channel.send(`السؤال هو:  __**${x[x3]}**__
