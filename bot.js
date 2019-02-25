@@ -216,7 +216,7 @@ client.on('message', khamn => {
         
         var x3 = Math.floor(Math.random()*x.length)
         khamn.channel.send(`السؤال هو:  __**${x[x3]}**__
-عندك 20 ثانية تخمن باقي النكته`).then(msg1=> {
+عندك 20 ثانية تخمن اجابة السؤال`).then(msg1=> {
             var r = khamn.channel.awaitMessages(msg => msg.content == x2[x3], {
                 maxMatches : 1,
                 time : 20000,
